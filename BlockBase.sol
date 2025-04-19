@@ -26,6 +26,17 @@ contract ExpenseTracker {
         address walletAddress;
     }
 
+
+    /**
+     * @user struct represents a user's name and address
+     
+    struct User {
+        address userAddress;
+        string name;
+    }
+    mapping(address => User) public users;
+    */
+    
     /**
      * @dev Expense struct represents a shared expense
      * @param id Unique identifier for the expense
@@ -65,6 +76,9 @@ contract ExpenseTracker {
 
     // Emitted when someone settles a debt
     event DebtSettled(address indexed from, address indexed to, uint256 amount);
+
+    // Event to emit when a user updates their name
+    event NameUpdated(address indexed user, string newName);
 
     /**
      * @dev Register a new person in the expense tracker
@@ -257,4 +271,12 @@ contract ExpenseTracker {
     function getAllRegisteredPeople() public view returns (address[] memory) {
         return registeredPeople;
     }
+
+    // to update the name of the registered user
+    function updateName(string memory _newName) public {
+        require(bytes(people[msg.sender].name).length != 0, "User not registered");
+        people[msg.sender].name = _newName;
+        emit NameUpdated(msg.sender, _newName);
+    }
+
 }
