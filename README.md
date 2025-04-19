@@ -1,8 +1,6 @@
 # Blockbase-Project...
 A new function is added in blockbase.sol file to update the name
-
 function updateName .....
-
 at the end of the file (line 276)
 
 
