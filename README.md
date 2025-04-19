@@ -1,8 +1,16 @@
 # Blockbase-Project...
-A new function is added in blockbase.sol file to update the name at the end of the file (line 276)
-
-
-App.js file is modified to show the no. of registered people on same contract and provide an option to update the name of a registered user (at line 24 and line 385)
-
-
-ABI file is changed. New abi file is copied from running the smart contract in remix
+<hr>
+<h3>Features Added:</h3>
+<li>
+  Enabling users to change their registered name.
+</li>
+<li>
+  Showing number of users registered on the same contract.
+</li>
+<hr>
+<h3>Code Changes:</h3>
+<h4>In BlockBase.sol</h4>
+Added New Lines of Code from line 275 to 280.
+<br>
+<h4>In App.js</h4>
+Added New Lines of Code in line 21, line 24 to 40, line 385 to 429.
